@@ -36,7 +36,10 @@ export const signinFailure = (state = INITIAL_STATE, action) => {
 export const HANDLERS = {
     [Types.SIGNIN_REQUEST]: siginRequest,
     [Types.SIGNIN_SUCCESS]: signinSuccess,
-    [Types.SIGNIN_FAILURE]: signinFailure
+    [Types.SIGNIN_FAILURE]: signinFailure,
+    // [Types.AUTH_REQUEST]: authRequest,
+    // [Types.AUTH_SUCCESS]: authSuccess,
+    // [Types.AUTH_FAILURE]: authFailure
 }
 
 export default createReducer(INITIAL_STATE, HANDLERS)
