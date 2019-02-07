@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ActionCreators from '../redux/actionCreators'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component{
     state = {
@@ -21,12 +22,23 @@ class Login extends Component{
         this.props.login(email, passwd)
     }
     render(){
+        if(this.props.auth.isAuth){
+            if(this.props.auth.user.role === 'admin'){
+                return <Redirect to='/admin' />
+            }
+            return <Redirect to='/restrito' />
+        }
+        
         return(
             <div>
-                <h1>Login {JSON.stringify(this.state)} </h1>
+                <h1>Login {JSON.stringify(this.props)} </h1>
                 <input type='text' value={this.state.form.email} onChange={this.handleChange('email')}></input>
                 <input type='password' value={this.state.form.passwd} onChange={this.handleChange('passwd')}></input>
                 <button onClick={this.login}>Logar</button>
+                {
+                    this.props.auth.error &&
+                        <p>Erro ao logar</p>
+                }
             </div>
         )
     }
