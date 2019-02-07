@@ -5,13 +5,14 @@ import './App.css';
 
 import store from './redux'
 import { Provider } from 'react-redux'
-import Header from './Header'
-import { Route, BrowserRouter as Router } from 'react-router-dom'
 
-const Home = props => <h1>Home</h1>
-const Admin = props => <h1>Admin</h1>
-const Restrito = props => <h1>Restrito</h1>
-const Login = props => <h1>Login</h1>
+import Admin from './screens/Admin'
+import Header from './Header'
+import Home from './screens/Home'
+import Restrito from './screens/Restrito'
+import Login from './screens/Login'
+
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 class App extends Component {
 //  async componentDidMount() {
