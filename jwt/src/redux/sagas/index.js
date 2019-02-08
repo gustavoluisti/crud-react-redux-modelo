@@ -4,6 +4,8 @@ import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 import ActionCreators from '../actionCreators'
 
+import { getRuns } from './runs'
+
 function* login(action){
     let token = localStorage.getItem('token')
       const login = yield axios.post('http://localhost:3001/users/login', {
@@ -40,6 +42,7 @@ export default function* rootSaga() {
     yield all([
         takeLatest(Types.SIGNIN_REQUEST, login),
         takeLatest(Types.AUTH_REQUEST, auth),
+        takeLatest(Types.GET_RUNS_REQUEST, getRuns),
         put(ActionCreators.authRequest())
     ])
     
