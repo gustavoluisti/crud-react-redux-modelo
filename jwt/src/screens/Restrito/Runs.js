@@ -1,5 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
+import ActionCreators from '../../redux/actionCreators'
+import { connect } from 'react-redux'
 
-const Runs = props => <h1>Home</h1>
+class Runs extends Component{
+    render() {
+        return <h1></h1>
+    }
+}
 
-export default Runs
+const mapStateToProps = state => {
+    return {
+        runs: state.runs
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        load: () => dispatch(ActionCreators.getRunsRequest())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Runs) 
