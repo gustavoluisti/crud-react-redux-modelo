@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
-import './App.css';
-// import axios from 'axios'
-// import jwtDecode from 'jwt-decode'
-
+import React, { Component } from 'react'
 import store from './redux'
 import { Provider } from 'react-redux'
 
 import Admin from './screens/Admin'
-import Header from './Header'
 import Home from './screens/Home'
 import Restrito from './screens/Restrito'
 import Login from './screens/Login'
+
+import { Container } from 'semantic-ui-react'
 
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 
@@ -20,13 +17,12 @@ class App extends Component {
     return (
       <Provider store={store}>
             <Router>
-              <div>
+              <Container>
                 <Route exact path='/' component={Home} />
                 <Route path='/admin' component={Admin} />
                 <Route path='/restrito' component={Restrito} />
                 <Route path='/login' component={Login} />
-                <Header />
-              </div>
+              </Container>
             </Router>
       </Provider>
     );
