@@ -31,7 +31,7 @@ class Login extends Component{
         
         return(
             <div>
-                <h1>Login {JSON.stringify(this.props)} </h1>
+                
                 <input type='text' value={this.state.form.email} onChange={this.handleChange('email')}></input>
                 <input type='password' value={this.state.form.passwd} onChange={this.handleChange('passwd')}></input>
                 <button onClick={this.login}>Logar</button>
