@@ -1,11 +1,9 @@
 import React from 'react'
-import Header from '../../Header'
 
 const Home = props => {
     return(
         <div>
-            <Header />
-            <h1>Home</h1>
+            <h1>Restrito</h1>
         </div>
     )
 }

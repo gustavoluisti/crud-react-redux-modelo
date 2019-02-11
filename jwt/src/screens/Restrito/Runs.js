@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import ActionCreators from '../../redux/actionCreators'
 import { connect } from 'react-redux'
-import { create } from 'domain';
+
+import { Table } from 'semantic-ui-react'
 
 class Runs extends Component{
     componentDidMount(){
@@ -37,9 +38,9 @@ class Runs extends Component{
             <div>
                 <h1>Runs</h1>
                 <button onClick={() => this.props.create(run)}>Create</button>
-                <table>
+                <Table>
                     { this.props.runs.data.map(this.renderRun)}
-                </table>
+                </Table>
             </div>
         )
     }
