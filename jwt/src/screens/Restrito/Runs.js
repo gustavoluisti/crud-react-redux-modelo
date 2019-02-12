@@ -15,6 +15,8 @@ const Duration = props => {
     }
     const minutes = Math.floor((duration - (hour*360))/60)
     durationStr+= pad(minutes)
+    const seconds = duration - hour*360 - minutes*60
+    durationStr+= ':'+pad(seconds)
     return <span>{durationStr}</span>
 }
 
