@@ -4,21 +4,10 @@ import { connect } from 'react-redux'
 
 import { Table, Button } from 'semantic-ui-react'
 
+import Distance from '../elements/Distance'
+import Duration from '../elements/Duration'
+import DateStr from '../elements/DateStr'
 
-const Duration = props => {
-    const { duration } = props
-    const pad = num => num.toString().padStart(2, '0')
-    let durationStr = ''
-    const hour = Math.floor(duration / 360) 
-    if(hour > 0){
-        durationStr = pad(hour) + ':'
-    }
-    const minutes = Math.floor((duration - (hour*360))/60)
-    durationStr+= pad(minutes)
-    const seconds = duration - hour*360 - minutes*60
-    durationStr+= ':'+pad(seconds)
-    return <span>{durationStr}</span>
-}
 
 class Runs extends Component{
     componentDidMount(){
@@ -34,10 +23,10 @@ class Runs extends Component{
                 <Duration duration={run.duration} />
                 </Table.Cell>
                 <Table.Cell>
-                    {run.distance}
+                    <Distance distance={run.distance} metric={'metric'} />
                 </Table.Cell>
                 <Table.Cell>
-                    {run.created}
+                    <DateStr date={run.created} timezone={'America/Sao_Paulo'} />
                 </Table.Cell>
             </Table.Row>
         )
@@ -48,7 +37,7 @@ class Runs extends Component{
             friendly_name: 'Corrida teste',
             duration: 100,
             distance: 100,
-            created: '2018-01-01 00:00:00'
+            created: ''
         }
         return (
             <div>
