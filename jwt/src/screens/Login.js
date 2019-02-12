@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ActionCreators from '../redux/actionCreators'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import Header from '../Header'
 
 class Login extends Component{
     state = {
@@ -31,7 +32,7 @@ class Login extends Component{
         
         return(
             <div>
-                
+                <Header />
                 <input type='text' value={this.state.form.email} onChange={this.handleChange('email')}></input>
                 <input type='password' value={this.state.form.passwd} onChange={this.handleChange('passwd')}></input>
                 <button onClick={this.login}>Logar</button>
