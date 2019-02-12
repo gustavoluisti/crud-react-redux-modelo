@@ -8,10 +8,13 @@ import { Menu } from 'semantic-ui-react'
 const Header = props => {
     return(
         <Menu>
-            <Menu.Item>Corridas Online <b>Restrito</b></Menu.Item>
+            <Menu.Item>Ultro Front <b>Restrito</b></Menu.Item>
             <Menu.Item as={Link} to='/'>Home</Menu.Item>
             <Menu.Item as={Link} to='/restrito/runs'>Corridas</Menu.Item>
             <Menu.Item as={Link} to='/restrito'>Restrito</Menu.Item>
+            <Menu.Menu>
+                <Menu.Item>User</Menu.Item>
+            </Menu.Menu>
         </Menu>
     )
 }

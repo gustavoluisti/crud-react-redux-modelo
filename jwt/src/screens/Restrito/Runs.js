@@ -36,7 +36,7 @@ class Runs extends Component{
         }
         return (
             <div>
-                <h1>Runs</h1>
+                <h1>Cadastro</h1>
                 <button onClick={() => this.props.create(run)}>Create</button>
                 <Table celled>
                     <Table.Header>
