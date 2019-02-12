@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ActionCreators from '../../redux/actionCreators'
 import { connect } from 'react-redux'
 
-import { Table } from 'semantic-ui-react'
+import { Table, Button } from 'semantic-ui-react'
 
 class Runs extends Component{
     componentDidMount(){
@@ -37,7 +37,7 @@ class Runs extends Component{
         return (
             <div>
                 <h1>Cadastro</h1>
-                <button onClick={() => this.props.create(run)}>Create</button>
+                <Button onClick={() => this.props.create(run)}>Create</Button>
                 <Table celled>
                     <Table.Header>
                         <Table.HeaderCell>Name</Table.HeaderCell>
