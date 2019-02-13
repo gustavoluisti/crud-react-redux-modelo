@@ -55,8 +55,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // load: () => dispatch(ActionCreators.getRunsRequest()),
-        // create: (run) => dispatch(ActionCreators.createRunRequest(run))
+        save: (user) => dispatch(ActionCreators.updateProfile(user))
     }
 }
 

@@ -36,6 +36,10 @@ export function* auth(){
     }
 }
 
+export function* updateProfile(action) {
+    console.log(action)
+}
+
 export function* destroyAuth(){
     localStorage.removeItem('token')
     localStorage.removeItem('user')

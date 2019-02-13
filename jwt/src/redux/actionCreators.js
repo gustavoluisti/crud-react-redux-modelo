@@ -31,6 +31,6 @@ export const {
     updateProfileRequest: ['user'],
     updateProfileSuccess: ['user'],
     updateProfileFailure: ['error'],
-    //'friendly_name', 'duration', 'distance', 'created'
+
 })
 export default Creators
