@@ -4,6 +4,7 @@ import Header from  '../Header'
 const Home = props => {
     return (
         <div>
+        <h1>Ultron Front</h1>
             <Header />
         </div>
     )

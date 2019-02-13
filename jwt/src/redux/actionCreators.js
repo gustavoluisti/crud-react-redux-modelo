@@ -1,3 +1,8 @@
+// Actions são responsáveis por requisitar algo para um reducer. 
+// Elas devem ser sempre funções puras, o que, dizendo de uma forma 
+// leiga, quer dizer que elas devem APENAS enviar os dados ao reducer, 
+// nada além disso.
+
 import { createActions } from 'reduxsauce'
 
 export const {
